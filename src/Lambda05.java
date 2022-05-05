@@ -16,15 +16,22 @@ public class Lambda05 {
         System.out.println("   ***   ");
 
         System.out.println("TASK 05 -->");
+        ikininIlkXKuvvetPrint(7);
         System.out.println("   ***   ");
 
         System.out.println("TASK 06 -->");
+        istenenSayininIlkXKuvvetPrint(4,3);
+        System.out.println("====");
+        istenenSayininIlkXKuvvetPrint(3,4);
+        System.out.println("====");
+        istenenSayininIlkXKuvvetPrint(14531453,1);
+        System.out.println("\n  ***   ");
+
+        System.out.println("TASK 07 -->" +istenenSayininFaktoryeli(5));
         System.out.println("   ***   ");
 
-        System.out.println("TASK 07 -->");
-        System.out.println("   ***   ");
-
-        System.out.println("TASK 08 -->");
+        System.out.println("TASK 08 -->" + xKuvveti(4,3));
+        System.out.println("TASK 08 -->" + xKuvveti(3,4));
         System.out.println("   ***   ");
 
     }
@@ -84,16 +91,39 @@ public class Lambda05 {
 
 
     //TASK 05 --> 2'nin ilk x kuvvetini ekrana yazdiran programi  create ediniz.
+    public static void ikininIlkXKuvvetPrint(int x){
+         IntStream.
+                iterate(2,t->t*2).//2'den baslayarak sonsuza kadar elemanlari 2 artirarak akisa alir
+                        limit(x).//akistaki x'e kadar olan degerleri alir
+                        forEach(Lambda01::yazdir);
+    }
+
 
 
     //TASK 06 --> Istenilen bir sayinin ilk x kuvvetini ekrana yazdiran programi  create ediniz.
-
+    public static void istenenSayininIlkXKuvvetPrint(int istenenSayi,int x){
+        IntStream.
+                iterate(istenenSayi,t->t*istenenSayi).//2'den baslayarak sonsuza kadar elemanlari 2 artirarak akisa alir
+                limit(x).//akistaki x'e kadar olan degerleri alir
+                forEach(Lambda01::yazdir);
+    }
 
     //TASK 07 --> Istenilen bir sayinin faktoriyelini hesaplayan programi  create ediniz.
-
+    public static int istenenSayininFaktoryeli(int x){
+      return  IntStream.
+                rangeClosed(1,x).
+               // reduce(Math::multiplyExact)
+               reduce(1, (t,u)->t*u);
+    }
 
     //TASK 08 --> Istenilen bir sayinin  x. kuvvetini ekrana yazdiran programi  create ediniz.
 
+    public static int xKuvveti (int istenenSayi, int x) {
+        return //Math.pow(istenenSayi,x);
+        IntStream.iterate(istenenSayi,t->t*istenenSayi).limit(x).reduce(0,(t,u)->u);
 
+                //limit(x).skip(x-1).findFirst().orElseThrow();
+
+    }
 }
 

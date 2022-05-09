@@ -93,7 +93,7 @@ public class Lambda05 {
     //TASK 05 --> 2'nin ilk x kuvvetini ekrana yazdiran programi  create ediniz.
     public static void ikininIlkXKuvvetPrint(int x){
          IntStream.
-                iterate(2,t->t*2).//2'den baslayarak sonsuza kadar elemanlari 2 artirarak akisa alir
+                iterate(2,t->t*2).
                         limit(x).//akistaki x'e kadar olan degerleri alir
                         forEach(Lambda01::yazdir);
     }

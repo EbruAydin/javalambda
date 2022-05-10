@@ -1,4 +1,4 @@
-package lambda_practice;
+package lambdapractice;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +15,7 @@ public class C3_Array_StreamOrnekleri {
         // kullanabilmek icin donusum yapilmalidir
 
         Integer arr1 [] ={1,5,-5,6,12,-8,9,3,4};
-
+        ortlama(arr1);
 
     }
     //S1: arrayin elemanlarini bir liste yazdiralim
@@ -28,7 +28,9 @@ public class C3_Array_StreamOrnekleri {
 
     // S3: Array in elemanlarinin ortalamasini bulalim yazdir
 
-
+    public static void ortlama(Integer [] arr1){
+        System.out.println(Arrays.stream(arr1).mapToInt(t -> t).average());
+    }
 
 
 

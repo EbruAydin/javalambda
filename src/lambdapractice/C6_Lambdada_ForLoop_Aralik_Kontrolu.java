@@ -13,6 +13,7 @@ public class C6_Lambdada_ForLoop_Aralik_Kontrolu {
     //range(int startInclusive, int endExclusive)
 
 
+
     //S2 1 den 30 kadar olan sayilari (30 dahil ) 1 2 3 .... seklinde siralayalim (for loopsuz)
     //rangeClosed(int startInclusive, int endInclusive)
 

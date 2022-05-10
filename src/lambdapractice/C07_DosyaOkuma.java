@@ -65,7 +65,7 @@ public class C07_DosyaOkuma {
                     map(t->t.split(" ")).
                     flatMap(Arrays::stream).
                     map(t->t.replaceAll("[.!,:)\\-]", "").
-                            replaceAll("\\d", "")).
+                             replaceAll("\\d", "")).
                     sorted().
                     forEach(System.out::println);
             // S7:  metinde kac tane "a"  vardir
